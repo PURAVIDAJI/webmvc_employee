@@ -2,6 +2,7 @@ package com.example.webmvc_employee.repository;
 
 import com.example.webmvc_employee.entitiy.Employee;
 import jakarta.persistence.EntityManager;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,6 +28,7 @@ class EmployeeRepositoryTest {
         //when
         List<Employee> employees = employeeRepository.findAll();
         //then
+        Assertions.assertThat(employees.size()).isEqualTo(1);
 
     }
 }
